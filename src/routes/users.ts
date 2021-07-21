@@ -1,6 +1,7 @@
-import {Router} from 'express'
+import { Application } from "express";
+import * as controllerUser from "../controllers/users/users";
 
-
-const router = Router()
-
-export default router
+export function users(app: Application) {
+  app.post("/users", controllerUser.createUser);
+  app.get("/users", controllerUser.getUsers);
+}
