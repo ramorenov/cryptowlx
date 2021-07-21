@@ -1,6 +1,5 @@
 import { ConnectionOptions } from "typeorm";
 import * as dotenv from "dotenv";
-import { User } from "../entities/user.entity";
 dotenv.config();
 
 const ORMConfig: ConnectionOptions = {

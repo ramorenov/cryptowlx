@@ -8,7 +8,7 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
     const body: IUser = req.body;
     const valResult = joi.validateUser(body);
     if (valResult.failed) {
-      next(valResult);
+      return next(valResult);
     }
     const response: any = await services.createUser(valResult);
     response.failed
@@ -17,10 +17,10 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
           message: "El usuario se creó con éxito",
           data: response,
         });
-  } catch (err) {
+  } catch (error) {
     next({
       status: 400,
-      message: err.toString(),
+      message: error.toString(),
     });
   }
 };
@@ -28,10 +28,10 @@ export const getUsers = async (req: Request, res: Response, next: NextFunction) 
   try {
     const response: any = await services.getUsers();
     response.failed ? next(response) : res.status(200).json({ message: "usuarios encontrados con éxito", data: response });
-  } catch (err) {
+  } catch (error) {
     next({
       status: 400,
-      message: err.toString(),
+      message: error.toString(),
     });
   }
 };
