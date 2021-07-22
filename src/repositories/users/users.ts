@@ -14,7 +14,7 @@ export const createUser = async (userData: IUser) => {
 
 export const getUsers = async () => {
   try {
-    const result = await getRepository(User).find();
+    const result = await getRepository(User).find({ select: ["name", "last_name", "username", "pref_currency"] });
     return result;
   } catch (error) {
     throw new Error(`No se encontraron usuarios: ${error.toString()}`);

@@ -5,3 +5,8 @@ export interface IUser {
   password: string;
   pref_currency: string;
 }
+
+export interface Ilogin {
+  username: string;
+  password: string;
+}
