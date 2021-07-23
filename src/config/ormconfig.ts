@@ -13,7 +13,7 @@ const ORMConfig: ConnectionOptions = {
   synchronize: false,
   migrationsRun: true,
   logging: true,
-  migrations: ["./src/migrations/**/*{.js}"],
+  migrations: ["./src/migrations/**/*{.ts,.js}"],
   cli: {
     migrationsDir: "./src/migrations",
   },

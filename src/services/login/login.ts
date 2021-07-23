@@ -9,8 +9,8 @@ import { Ilogin } from "../../interfaces/interfaces";
 
 export const userLogin = async (userData: Ilogin) => {
   try {
-    const user = await getRepository(User).findOne({ username: userData.username });
-    if (!user) throw new Error(`Usuario o contraseña invalida`);
+    const user = await getRepository(User).findOne({ username: userData.username }, { select: ["username", "password"] });
+    if (!user) throw new Error(`usuario o contraseña invalida`);
     const isMatch = await bcrypt.compare(userData.password, user.password);
     if (!isMatch) throw new Error(`usuario o contraseña invalida`);
     const payload = { id: user.id, username: user.username };

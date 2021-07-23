@@ -5,7 +5,8 @@ import { IUser } from "../../interfaces/interfaces";
 export const createUser = async (userData: IUser) => {
   try {
     const user = getRepository(User).create(userData);
-    const result = await getRepository(User).save(user);
+    const result = await getRepository(User).save(user, {});
+
     return result;
   } catch (error) {
     throw new Error(`No se pudo crear el usuario debido al siguiente error: ${error.toString()}`);
@@ -14,7 +15,7 @@ export const createUser = async (userData: IUser) => {
 
 export const getUsers = async () => {
   try {
-    const result = await getRepository(User).find({ select: ["name", "last_name", "username", "pref_currency"] });
+    const result = await getRepository(User).find();
     return result;
   } catch (error) {
     throw new Error(`No se encontraron usuarios: ${error.toString()}`);
