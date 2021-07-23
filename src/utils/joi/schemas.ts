@@ -10,5 +10,5 @@ export const user = joi.object({
     .regex(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
     .required()
     .label("La contraseña debe ser alfanumerica y tener minimo, 8 caracteres"),
-  pref_currency: joi.string().valid("usd", "euro", "arg").required().label("Ingrese el tipo de moneda preferido entre usd, euro, arg"),
+  pref_currency: joi.string().valid("usd", "euro", "ars").required().label("Ingrese el tipo de moneda preferido entre usd, euro, arg"),
 });
