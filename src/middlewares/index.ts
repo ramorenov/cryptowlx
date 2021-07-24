@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import * as jwt from "jsonwebtoken";
 import * as dotenv from "dotenv";
-import { networkInterfaces } from "os";
 dotenv.config();
 
 export const handlerError = async (error: any, req: Request, res: Response, next: NextFunction) => {
@@ -16,7 +15,6 @@ export const verifyToken = async (req: any, res: Response, next: NextFunction) =
     }
     const token = req.headers.authorization.split(" ")[1];
     const decoded: any = jwt.verify(token, process.env.KEY_PRIVATE!);
-    console.log("::::::token decodificado:::::::::", decoded.payload);
     req.user = { id: decoded.payload.id, username: decoded.payload.username };
     next();
   } catch (error) {

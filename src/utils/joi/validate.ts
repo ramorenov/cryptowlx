@@ -1,4 +1,4 @@
-import { user } from "./schemas";
+import { coinlist, user } from "./schemas";
 
 const responseValidation = (value: any) => {
   if (value["error"]) {
@@ -14,6 +14,12 @@ const responseValidation = (value: any) => {
 
 export const validateUser = (data: Object) => {
   const value = user.validate(data);
+  const response = responseValidation(value);
+  return response;
+};
+
+export const validateCoinlist = (data: Object) => {
+  const value = coinlist.validate(data);
   const response = responseValidation(value);
   return response;
 };
