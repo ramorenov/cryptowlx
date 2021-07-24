@@ -13,9 +13,9 @@ const ORMConfig: ConnectionOptions = {
   synchronize: false,
   migrationsRun: true,
   logging: true,
-  migrations: ["./src/migrations/**/*{.ts,.js}"],
+  migrations: [__dirname + "/../migrations/**/*{.js,.ts}"],
   cli: {
-    migrationsDir: "./src/migrations",
+    migrationsDir: `./src/migrations`,
   },
 };
 
