@@ -13,7 +13,7 @@ export interface Ilogin {
   password: string;
 }
 
-/* export interface RequestC extends Request {
-  user: { id?: string; username?: string };
+export interface ICoin {
+  user_id: string;
+  coin_id: string;
 }
- */

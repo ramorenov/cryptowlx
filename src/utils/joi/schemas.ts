@@ -20,3 +20,8 @@ export const coinlist = joi.object({
   per_page: joi.number().label("Ingrese un valor numerico para paginación"),
   page: joi.number().label("Ingrese un numero de pagina valido"),
 });
+
+export const coin = joi.object({
+  user_id: joi.string().required(),
+  coin_id: joi.string().required().label("Ingrese el id de la criptomoneda que desea guardar"),
+});

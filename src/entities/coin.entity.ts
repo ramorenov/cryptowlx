@@ -7,10 +7,10 @@ export class Coin {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
+  @Column({ nullable: false })
   coin_id: string;
 
-  @ManyToOne((type) => User)
+  @ManyToOne((type) => User, { nullable: false })
   @JoinColumn({ name: "user_id", referencedColumnName: "id" })
   user_id: string;
 }
