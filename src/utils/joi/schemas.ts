@@ -13,7 +13,7 @@ export const user = joi.object({
   pref_currency: joi.string().valid("usd", "euro", "ars").required().label("Ingrese el tipo de moneda preferido entre usd, euro, ars"),
 });
 
-export const coinlist = joi.object({
+export const coinList = joi.object({
   vs_currency: joi.string().valid("usd", "euro", "ars").required().label("Ingrese el tipo de moneda preferido entre usd, euro, ars"),
   ids: joi.string().label("Ingrese el symbolo de la criptomoneda"),
   order: joi.string().valid("market_cap_desc", "market_cap_asc").label("Ingrese un nombre de usuario válido"),
@@ -24,4 +24,10 @@ export const coinlist = joi.object({
 export const coin = joi.object({
   user_id: joi.string().required(),
   coin_id: joi.string().required().label("Ingrese el id de la criptomoneda que desea guardar"),
+});
+
+export const coinTop = joi.object({
+  user_id: joi.string().required(),
+  order: joi.string().valid("desc", "asc").default("desc").label("Ingrese tipo de ordenamiento asc o desc"),
+  top_n: joi.number().min(1).max(25).required().label("Ingrese un numero entero entre 1 y 25"),
 });

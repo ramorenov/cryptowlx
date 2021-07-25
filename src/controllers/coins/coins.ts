@@ -5,7 +5,7 @@ import * as joi from "../../utils/joi/validate";
 export const getCoins = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const params = req.query;
-    const valCoinList = joi.validateCoinlist(params);
+    const valCoinList = joi.validateCoinList(params);
     if (valCoinList.failed) {
       return next(valCoinList);
     }
@@ -21,14 +21,30 @@ export const getCoins = async (req: Request, res: Response, next: NextFunction) 
 
 export const saveCoin = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const body = { user_id: req.user.id, coin_id: req.body.coin_id };
-    const valCoin = joi.validateCoin(body);
+    const data = { user_id: req.user.id, coin_id: req.body.coin_id };
+    const valCoin = joi.validateCoin(data);
     if (valCoin.failed) {
       return next(valCoin);
     }
-    console.log(body);
     const response: any = await services.saveCoin(valCoin);
     response.failed ? next(response) : res.status(200).json({ message: "moneda guardada con éxito", data: response });
+  } catch (error) {
+    next({
+      status: 400,
+      message: error.toString(),
+    });
+  }
+};
+
+export const topCoins = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const data = { user_id: req.user.id, ...req.query };
+    const valCoinTop = joi.validateCoinTop(data);
+    if (valCoinTop.failed) {
+      return next(valCoinTop);
+    }
+    const response: any = await services.topCoins(valCoinTop);
+    response.failed ? next(response) : res.status(200).json({ message: "top de monedas encontradas con éxito", data: response });
   } catch (error) {
     next({
       status: 400,

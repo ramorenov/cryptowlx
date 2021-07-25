@@ -21,3 +21,12 @@ export const getUsers = async () => {
     throw new Error(`No se encontraron usuarios: ${error.toString()}`);
   }
 };
+
+export const getUserById = async (user_id: string) => {
+  try {
+    const result = await getRepository(User).findOne(user_id);
+    return result;
+  } catch (error) {
+    throw new Error(`No se encontraron usuarios: ${error.toString()}`);
+  }
+};

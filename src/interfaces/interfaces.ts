@@ -17,3 +17,9 @@ export interface ICoin {
   user_id: string;
   coin_id: string;
 }
+
+export interface ITopCoin {
+  user_id: string;
+  top_n: number;
+  order: string;
+}

@@ -9,6 +9,16 @@ export const saveCoin = async (coinData: ICoin) => {
 
     return result;
   } catch (error) {
-    throw new Error(`No se pudo crear el usuario debido al siguiente error: ${error.toString()}`);
+    throw new Error(`No se pudo guardar la moneda debido al siguiente error: ${error.toString()}`);
+  }
+};
+
+export const getUserCoins = async (user_id: string) => {
+  try {
+    const result = getRepository(Coin).find({ user_id });
+
+    return result;
+  } catch (error) {
+    throw new Error(`No se encontraron monedas debido al siguiente error: ${error.toString()}`);
   }
 };

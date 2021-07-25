@@ -1,7 +1,7 @@
 import * as repositories from "../../repositories/coins/coins";
-
 import axios from "axios";
-import { ICoin } from "../../interfaces/interfaces";
+import { ICoin, ITopCoin } from "../../interfaces/interfaces";
+import { getUserById } from "../../repositories/users/users";
 
 export const getCoins = async (params: { vs_currency: string; ids: string; per_page: number; page: number }) => {
   const { vs_currency, ids, per_page, page } = params;
@@ -43,6 +43,46 @@ export const saveCoin = async (coinData: ICoin) => {
     return response;
   } catch (error) {
     console.log(error);
+    return { failed: true, status: 500, message: error.toString() };
+  }
+};
+
+export const topCoins = async (topCoinData: ITopCoin) => {
+  const { user_id, top_n, order } = topCoinData;
+
+  try {
+    const user = await getUserById(user_id);
+    const vs_currency = user?.pref_currency;
+    const user_coins = await repositories.getUserCoins(user_id);
+    const ids = user_coins.map((item) => item.coin_id).toString();
+
+    const urlMarkets = "https://api.coingecko.com/api/v3/coins/markets";
+    const requestOptionsMarkets = {
+      params: { ids, vs_currency },
+    };
+    const responseMarkets = await axios.get(urlMarkets, requestOptionsMarkets);
+    const dataMarkets = responseMarkets.data;
+    console.log(dataMarkets);
+
+    const urlPrices = "https://api.coingecko.com/api/v3/simple/price";
+    const requestOptionsPrices = {
+      params: { ids, vs_currencies: "usd,ars,eur" },
+    };
+    const responsePrices = await axios.get(urlPrices, requestOptionsPrices);
+    const dataPrices = responsePrices.data;
+
+    const result: {}[] = [];
+    dataMarkets
+      .sort((a: any, b: any) => (a.current_price < b.current_price ? 1 : -1))
+      .slice(0, top_n)
+      .map(function (item: any, index: number) {
+        const crypto = { symbol: item.symbol, name: item.name, image: item.image, ...dataPrices[item.id], last_updated: item.last_updated };
+        result[index] = crypto;
+        return;
+      });
+    order === "asc" ? result.reverse() : result;
+    return result;
+  } catch (error) {
     return { failed: true, status: 500, message: error.toString() };
   }
 };
