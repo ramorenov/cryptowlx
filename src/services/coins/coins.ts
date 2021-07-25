@@ -62,7 +62,6 @@ export const topCoins = async (topCoinData: ITopCoin) => {
     };
     const responseMarkets = await axios.get(urlMarkets, requestOptionsMarkets);
     const dataMarkets = responseMarkets.data;
-    console.log(dataMarkets);
 
     const urlPrices = "https://api.coingecko.com/api/v3/simple/price";
     const requestOptionsPrices = {
@@ -78,7 +77,6 @@ export const topCoins = async (topCoinData: ITopCoin) => {
       .map(function (item: any, index: number) {
         const crypto = { symbol: item.symbol, name: item.name, image: item.image, ...dataPrices[item.id], last_updated: item.last_updated };
         result[index] = crypto;
-        return;
       });
     order === "asc" ? result.reverse() : result;
     return result;

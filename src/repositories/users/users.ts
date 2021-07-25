@@ -6,8 +6,9 @@ export const createUser = async (userData: IUser) => {
   try {
     const user = getRepository(User).create(userData);
     const result = await getRepository(User).save(user, {});
-
-    return result;
+    const newUser = JSON.parse(JSON.stringify(result));
+    delete newUser.password;
+    return newUser;
   } catch (error) {
     throw new Error(`No se pudo crear el usuario debido al siguiente error: ${error.toString()}`);
   }
