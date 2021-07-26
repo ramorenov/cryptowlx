@@ -9,7 +9,13 @@ beforeAll(async () => {
 
 describe("GET /users", () => {
   test("debe responder lista de usuarios con status 200 ", async () => {
-    await request(app).get("/users").expect("Content-Type", /json/).expect(200);
+    await request(app)
+      .get("/users")
+      .expect("Content-Type", /json/)
+      .expect(200)
+      .then((res: { body: any }) => {
+        console.log(res.body);
+      });
   });
 });
 

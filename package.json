@@ -6,14 +6,21 @@
   "scripts": {
     "dev": "NODE_ENV=dev nodemon --exec ts-node src/index.ts",
     "test-server": "NODE_ENV=test nodemon --exec ts-node src/index.ts",
-    "test": "NODE_ENV=dev jest --runInBand --silent",
+    "test": "NODE_ENV=test jest --runInBand --verbose --detectOpenHandles",
     "test:watch":"npm run test -- --watch",
     "build": "tsc",
-    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js --config ./src/config/ormconfig.ts",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "migration:gen-dev": "npm run typeorm -- migration:generate --config /ormconfig.json --connection dev --name ",
+    "migration:gen-test": "npm run typeorm -- migration:generate --config /ormconfig.json --connection test --name",
+
+    "migration:run-test": "npm run typeorm -- migration:run --config /ormconfig.json --connection test",
+    "migration:run-dev": "npm run typeorm -- migration:run --config /ormconfig.json --connection dev",
+
+    
     "migration:generate": "npm run typeorm -- migration:generate -n",
     "migration:run": "npm run typeorm -- migration:run",
     "migration:create": "npm run typeorm -- migration:create",
-    "migration:drop": "npm run typeorm -- schema:drop"
+    "migration:drop": "npm run typeorm -- schema:drop --config /ormconfig.json --connection test"
   },
   "repository": {
     "type": "git",
