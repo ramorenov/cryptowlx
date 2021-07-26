@@ -12,9 +12,9 @@ Para propósitos de desarrollo y pruebas, puedes descargar una copia del código
 
 Para ejecutar el proyecto necesitaras:
 
-NodeJS
-PostgreSQL
-Postman
+-NodeJS
+-PostgreSQL
+-Postman
 
 ### Instalación 🔧
 
@@ -66,14 +66,14 @@ la estructura general del ormconfig es:
 
 Una vez configuradas ambas bases de datos, debe generar y ejecutar la migración de las entidades para crear las respectivas tablas en las bases de datos dev y test, para esto puede ejecutar los siguientes comandos:
 
-npm migration:gen-dev
-npm migration:run-dev
-npm migration:run-test
+-npm migration:gen-dev
+-npm migration:run-dev
+-npm migration:run-test
 
 Luego de generar las migraciones, podrá ejecutar los scripts para correr los test con cualquiera de los siguientes comandos:
 
-npm run test
-npm run test:watch
+-npm run test
+-npm run test:watch
 
 ## Construido con 🛠️
 
@@ -85,7 +85,7 @@ npm run test:watch
 
 ## Documentacion 📌
 
-Use [Postman](https://www.postman.com/) gestionar y documentar los endpoints de la API.
+Usé [Postman](https://www.postman.com/) para ejecutar y documentar los endpoints de la API.
 
 Puede importar la colección para postman disponible en la carpeta **postman** en la raiz del proyecto.
 
