@@ -12,15 +12,15 @@ Para propósitos de desarrollo y pruebas, puedes descargar una copia del código
 
 Para ejecutar el proyecto necesitaras:
 
--NodeJS
--PostgreSQL
--Postman
+- NodeJS
+- PostgreSQL
+- Postman
 
 ### Instalación 🔧
 
 En la terminal del sistema operativo, ubicado en la carpeta principal del proyecto CRYPTOWLX, ejecuta el comando npm install, para realizar la instalación de todas las dependencias requeridas.
 
-deberás crear previamente una base de datos en Postgres; para configurarla deberá crear el archivo ormconfig.json en la raíz del proyecto y copiar el siguiente array donde deberás definir las variables **host,port,username,password y database** para la conexión a la base de datos de desarrollo(dev),las demás variables se dejan como se muestra a continuación:
+deberás crear previamente una base de datos en Postgres; para configurarla deberá crear el archivo ormconfig.json en la raíz del proyecto y copiar el siguiente array donde deberás definir las variables **_host,port,username,password y database_** para la conexión a la base de datos de desarrollo(dev),las demás variables se dejan como se muestra a continuación:
 
 ```
 [
@@ -50,7 +50,7 @@ Una vez que la instalación a finalizado puedes correr el proyecto con el comand
 
 ## Ejecutando las pruebas ⚙️
 
-Para ejecutar las pruebas o test del proyecto se recomienda la creación de una base de datos alterna, para definirla copiar el objeto de la base de datos de desarrollo y copiarlo en el mismo array del archivo ormconfig.json, deberas definir las variables **host,port,username,password y database** para la conexión a la base de datos de testing(test) las demás se dejan igual que en el caso desarrollo excepto name que deberá ser "name" :"test".
+Para ejecutar las pruebas o test del proyecto se recomienda la creación de una base de datos alterna, para definirla copiar el objeto de la base de datos de desarrollo y copiarlo en el mismo array del archivo ormconfig.json, deberas definir las variables **_host,port,username,password y database_** para la conexión a la base de datos de testing(test) las demás se dejan igual que en el caso desarrollo excepto name que deberá ser "name" :"test".
 
 la estructura general del ormconfig es:
 
@@ -66,14 +66,14 @@ la estructura general del ormconfig es:
 
 Una vez configuradas ambas bases de datos, debe generar y ejecutar la migración de las entidades para crear las respectivas tablas en las bases de datos dev y test, para esto puede ejecutar los siguientes comandos:
 
--npm migration:gen-dev
--npm migration:run-dev
--npm migration:run-test
+- npm migration:gen-dev
+- npm migration:run-dev
+- npm migration:run-test
 
 Luego de generar las migraciones, podrá ejecutar los scripts para correr los test con cualquiera de los siguientes comandos:
 
--npm run test
--npm run test:watch
+- npm run test
+- npm run test:watch
 
 ## Construido con 🛠️
 
