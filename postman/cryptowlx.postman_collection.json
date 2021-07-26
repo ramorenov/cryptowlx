@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "31bcc3ea-995e-489f-820e-c47ae9c69ccc",
+		"name": "cryptowlx",
+		"description": "Cryptowlx API es un monitor de criptomonedas que utiliza coingecko como fuente para obtener información actualizada de las diferentes criptomonedas existentes.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"juan\",\r\n    \"last_name\": \"velasquez\",\r\n    \"username\": \"juanv\",\r\n    \"password\": \"A123456a\",\r\n    \"pref_currency\": \"eur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						},
+						"description": "Endpoint para la creación de usuarios."
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						},
+						"description": "Endpoint para obtener usuarios"
+					},
+					"response": [
+						{
+							"name": "getUsers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "433"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b1-ObKYZVZBmbBCjYmDlsJJAsIFuhM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jul 2021 00:05:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"usuarios encontrados con éxito\",\n    \"data\": [\n        {\n            \"id\": \"bd2e47dd-fe7e-486d-b2cd-00d62b700691\",\n            \"name\": \"jose\",\n            \"last_name\": \"casas\",\n            \"username\": \"josec\",\n            \"pref_currency\": \"usd\"\n        },\n        {\n            \"id\": \"8ab4a910-1033-49d4-9b98-86e33130c74a\",\n            \"name\": \"ricardo\",\n            \"last_name\": \"moreno\",\n            \"username\": \"ramorenov\",\n            \"pref_currency\": \"eur\"\n        },\n        {\n            \"id\": \"536531bf-077a-4608-b67a-8476ef857228\",\n            \"name\": \"caterin\",\n            \"last_name\": \"santa\",\n            \"username\": \"catesantah\",\n            \"pref_currency\": \"usd\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "**Servicio para creación de usuarios.**"
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.globals.set(\"token\", jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"ramorenov\",\r\n    \"password\" : \"A123456a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoint para realizar login de usuario"
+		},
+		{
+			"name": "coins",
+			"item": [
+				{
+					"name": "GetCoinList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/coins?vs_currency=usd&per_page=100&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"coins"
+							],
+							"query": [
+								{
+									"key": "vs_currency",
+									"value": "usd"
+								},
+								{
+									"key": "per_page",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Endpoint para obtener el listado total de criptomonedas"
+					},
+					"response": []
+				},
+				{
+					"name": "GetTopCoins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/coins/top?top_n=20&order=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"coins",
+								"top"
+							],
+							"query": [
+								{
+									"key": "top_n",
+									"value": "20"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveCoin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"coin_id\" : \"dogecoin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/coins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"coins"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Servicio para obtener listado de criptomonedas, guardar criptomonedas por usuario y obtener el top N de criptomonedas según su precio de mercado en la moneda preferida del usuario"
+		}
+	]
+}
