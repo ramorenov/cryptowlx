@@ -8,6 +8,7 @@ export interface IUser {
   pref_currency: string;
 }
 
+export type IUserR = Omit<IUser, "password">;
 export interface Ilogin {
   username: string;
   password: string;

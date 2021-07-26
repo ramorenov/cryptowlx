@@ -42,7 +42,6 @@ export const saveCoin = async (coinData: ICoin) => {
 
     return response;
   } catch (error) {
-    console.log(error);
     return { failed: true, status: 500, message: error.toString() };
   }
 };
@@ -54,8 +53,10 @@ export const topCoins = async (topCoinData: ITopCoin) => {
     const user = await getUserById(user_id);
     const vs_currency = user?.pref_currency;
     const user_coins = await repositories.getUserCoins(user_id);
+    if (user_coins.length === 0) {
+      throw "el usuario no tiene monedas";
+    }
     const ids = user_coins.map((item) => item.coin_id).toString();
-
     const urlMarkets = "https://api.coingecko.com/api/v3/coins/markets";
     const requestOptionsMarkets = {
       params: { ids, vs_currency },

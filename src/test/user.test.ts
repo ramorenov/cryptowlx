@@ -1,4 +1,5 @@
 import { createTypeOrmConn } from "../config/ormconnection";
+import { IUserR } from "../interfaces/interfaces";
 
 const request = require("supertest");
 const { app, server } = require("../index");
@@ -13,7 +14,7 @@ describe("GET /users", () => {
       .get("/users")
       .expect("Content-Type", /json/)
       .expect(200)
-      .then((res: { body: any }) => {
+      .then((res: { body: IUserR }) => {
         console.log(res.body);
       });
   });
@@ -32,7 +33,7 @@ describe("POST /users", () => {
       })
       .expect("Content-Type", /json/)
       .expect(201)
-      .then((res: { body: any }) => {
+      .then((res: { body: IUserR }) => {
         expect(res.body).toHaveProperty("data");
       });
   });
