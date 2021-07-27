@@ -8,7 +8,6 @@ import { handlerError } from "./middlewares";
 import { createTypeOrmConn } from "./config/ormconnection";
 const app = express();
 dotenv.config();
-//createConnection(ORMConfig);
 createTypeOrmConn();
 app.use(cors());
 app.use(express.json());

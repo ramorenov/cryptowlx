@@ -82,10 +82,9 @@ Una vez que la instalación a finalizado puedes correr el proyecto con el comand
 ## Ejecutando las pruebas ⚙️
 
 Para ejecutar las pruebas o test del proyecto es necesario haber completado todos los pasos de instalacion del proyecto y haber configurado correctamente la base de datos "test".
-Puede ejecutar los scripts para correr los test con cualquiera de los siguientes comandos:
+Puede ejecutar los scripts para correr los test con el siguiente comando:
 
 - npm run test
-- npm run test:watch
 
 ## Construido con 🛠️
 

@@ -1,5 +1,3 @@
-import { Request } from "express";
-
 export interface IUser {
   name: string;
   last_name: string;
@@ -38,4 +36,13 @@ export interface IRespCoin {
   name: string;
   image: string;
   last_updated: string;
+}
+
+export interface IToken {
+  payload: {
+    id: string;
+    username: string;
+  };
+  iat: number;
+  exp: number;
 }
