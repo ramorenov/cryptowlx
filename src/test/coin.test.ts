@@ -75,6 +75,21 @@ describe("GET /coins", () => {
 });
 
 describe("POST /coins", () => {
+  test("debe responder status 500 si el usuario no tiene monedas guardadas", async () => {
+    await request(app)
+      .get("/coins/top")
+      .set("Authorization", `Bearer ${token}`)
+      .query({
+        top_n: 20,
+        order: "asc",
+      })
+      .expect("Content-Type", /json/)
+      .expect(500)
+      .then((res: Body) => {
+        expect(res.body).toHaveProperty("message", "el usuario no tiene monedas");
+      });
+  });
+
   test("debe responder status 200 al guardar una moneda existente en coingecko", async () => {
     await request(app)
       .post("/coins")

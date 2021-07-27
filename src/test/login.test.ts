@@ -30,12 +30,25 @@ describe("POST /login", () => {
       });
   });
 
-  test("debe responder status 401 si el usuario ingresa mal la contraseña o el username", async () => {
+  test("debe responder status 401 si el usuario ingresa un usuario que no existe en DB", async () => {
     await request(app)
       .post("/login")
       .send({
-        username: 1233,
-        password: 2546,
+        username: "xxxx",
+        password: "A123456a",
+      })
+      .expect(401)
+      .then((res: Body) => {
+        expect(res.body).toHaveProperty("message", "usuario o contraseña invalida");
+      });
+  });
+
+  test("debe responder status 401 si el usuario ingresa un usuario con contraseña invalida", async () => {
+    await request(app)
+      .post("/login")
+      .send({
+        username: "ramorenov",
+        password: "A654321a",
       })
       .expect(401)
       .then((res: Body) => {
