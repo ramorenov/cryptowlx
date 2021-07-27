@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "31bcc3ea-995e-489f-820e-c47ae9c69ccc",
-		"name": "cryptowlx",
+		"name": "Cryptowlx",
 		"description": "CryptowlxAPI es un monitor de criptomonedas que utiliza coingecko como fuente para obtener información actualizada de las diferentes criptomonedas existentes.\n\nEntre sus funcionalidades principales, está la creación y login de usuarios, consultar y listar información de criptomonedas disponibles en coingecko incluyendo su precio en la moneda preferida del usuario. Guardar monedas preferidas por usuario para hacer seguimiento y obtener el top N de criptomonedas según su precio en la moneda preferida del usuario.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"juan\",\r\n    \"last_name\": \"velasquez\",\r\n    \"username\": \"juanv\",\r\n    \"password\": \"A123456a\",\r\n    \"pref_currency\": \"eur\"\r\n}",
+							"raw": "{\r\n    \"name\": \"ricardo\",\r\n    \"last_name\": \"moreno\",\r\n    \"username\": \"ramorenov\",\r\n    \"password\": \"A123456a\",\r\n    \"pref_currency\": \"eur\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -38,13 +38,13 @@
 					},
 					"response": [
 						{
-							"name": "CreateUser",
+							"name": "CreateUserOk",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"juan\",\r\n    \"last_name\": \"velasquez\",\r\n    \"username\": \"juanv\",\r\n    \"password\": \"A123456a\",\r\n    \"pref_currency\": \"eur\"\r\n}",
+									"raw": "{\r\n    \"name\": \"ricardo\",\r\n    \"last_name\": \"moreno\",\r\n    \"username\": \"ramorenov\",\r\n    \"password\": \"A123456a\",\r\n    \"pref_currency\": \"eur\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -81,15 +81,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "176"
+									"value": "180"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"b0-/PanejjYu9StfxIb6N+JQ1UayvY\""
+									"value": "W/\"b4-cwVdaD0pMYM70LYODrGTB4lIWYM\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 27 Jul 2021 02:35:44 GMT"
+									"value": "Tue, 27 Jul 2021 17:20:46 GMT"
 								},
 								{
 									"key": "Connection",
@@ -101,7 +101,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"El usuario se creó con éxito\",\n    \"data\": {\n        \"name\": \"juan\",\n        \"last_name\": \"velasquez\",\n        \"username\": \"juanv\",\n        \"pref_currency\": \"eur\",\n        \"id\": \"e537b9d8-e756-4242-aa3a-267d140b30e3\"\n    }\n}"
+							"body": "{\n    \"message\": \"El usuario se creó con éxito\",\n    \"data\": {\n        \"name\": \"ricardo\",\n        \"last_name\": \"moreno\",\n        \"username\": \"ramorenov\",\n        \"pref_currency\": \"eur\",\n        \"id\": \"f1c8dacd-f439-4e03-b633-f0e7487e00f9\"\n    }\n}"
 						},
 						{
 							"name": "CreateUser",
@@ -326,7 +326,7 @@
 					},
 					"response": [
 						{
-							"name": "Login",
+							"name": "LoginOK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -392,7 +392,7 @@
 							"body": "{\n    \"message\": \"Usuario logeado con éxito\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiNmI2NGI4MTctY2QzZS00YzQ4LTg2MzMtOGYzZTk4MTZhYjhjIiwidXNlcm5hbWUiOiJyYW1vcmVub3YifSwiaWF0IjoxNjI3MzUzNDcxLCJleHAiOjE2Mjc0Mzk4NzF9.w_2PNpjsJFC8BTU8jeHVJbZPeSeeKpVURnj6y5NWNEs\"\n}"
 						},
 						{
-							"name": "Login",
+							"name": "LoginFail",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -509,78 +509,7 @@
 					},
 					"response": [
 						{
-							"name": "GetCoinList",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/coins?vs_currency=usd&per_page=100&page=1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"coins"
-									],
-									"query": [
-										{
-											"key": "vs_currency",
-											"value": "usd"
-										},
-										{
-											"key": "per_page",
-											"value": "100"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "27"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1b-CgdsrqtkLn0qBSLU/p4pPCfLVik\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 27 Jul 2021 02:41:36 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"message\": \"jwt malformed\"\n}"
-						},
-						{
-							"name": "GetCoinList",
+							"name": "GetCoinListOk",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -649,6 +578,77 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"monedas encontradas con éxito\",\n    \"data\": [\n        {\n            \"id\": \"bitcoin\",\n            \"symbol\": \"btc\",\n            \"current_price\": 36915,\n            \"name\": \"Bitcoin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579\",\n            \"last_updated\": \"2021-07-27T02:42:16.047Z\"\n        },\n        {\n            \"id\": \"ethereum\",\n            \"symbol\": \"eth\",\n            \"current_price\": 2170.2,\n            \"name\": \"Ethereum\",\n            \"image\": \"https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880\",\n            \"last_updated\": \"2021-07-27T02:42:09.908Z\"\n        },\n        {\n            \"id\": \"tether\",\n            \"symbol\": \"usdt\",\n            \"current_price\": 0.998365,\n            \"name\": \"Tether\",\n            \"image\": \"https://assets.coingecko.com/coins/images/325/large/Tether-logo.png?1598003707\",\n            \"last_updated\": \"2021-07-27T02:05:34.175Z\"\n        },\n        {\n            \"id\": \"binancecoin\",\n            \"symbol\": \"bnb\",\n            \"current_price\": 301.05,\n            \"name\": \"Binance Coin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png?1547034615\",\n            \"last_updated\": \"2021-07-27T02:42:10.125Z\"\n        },\n        {\n            \"id\": \"cardano\",\n            \"symbol\": \"ada\",\n            \"current_price\": 1.23,\n            \"name\": \"Cardano\",\n            \"image\": \"https://assets.coingecko.com/coins/images/975/large/cardano.png?1547034860\",\n            \"last_updated\": \"2021-07-27T02:42:04.837Z\"\n        },\n        {\n            \"id\": \"ripple\",\n            \"symbol\": \"xrp\",\n            \"current_price\": 0.61731,\n            \"name\": \"XRP\",\n            \"image\": \"https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731\",\n            \"last_updated\": \"2021-07-27T02:41:43.564Z\"\n        },\n        {\n            \"id\": \"usd-coin\",\n            \"symbol\": \"usdc\",\n            \"current_price\": 0.999231,\n            \"name\": \"USD Coin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png?1547042389\",\n            \"last_updated\": \"2021-07-27T02:41:35.761Z\"\n        },\n        {\n            \"id\": \"dogecoin\",\n            \"symbol\": \"doge\",\n            \"current_price\": 0.200086,\n            \"name\": \"Dogecoin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/5/large/dogecoin.png?1547792256\",\n            \"last_updated\": \"2021-07-27T02:42:07.328Z\"\n        },\n        {\n            \"id\": \"polkadot\",\n            \"symbol\": \"dot\",\n            \"current_price\": 13.56,\n            \"name\": \"Polkadot\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12171/large/aJGBjJFU_400x400.jpg?1597804776\",\n            \"last_updated\": \"2021-07-27T02:41:33.065Z\"\n        },\n        {\n            \"id\": \"binance-usd\",\n            \"symbol\": \"busd\",\n            \"current_price\": 0.996711,\n            \"name\": \"Binance USD\",\n            \"image\": \"https://assets.coingecko.com/coins/images/9576/large/BUSD.png?1568947766\",\n            \"last_updated\": \"2021-07-27T02:42:10.911Z\"\n        },\n        {\n            \"id\": \"uniswap\",\n            \"symbol\": \"uni\",\n            \"current_price\": 17.92,\n            \"name\": \"Uniswap\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12504/large/uniswap-uni.png?1600306604\",\n            \"last_updated\": \"2021-07-27T02:41:53.970Z\"\n        },\n        {\n            \"id\": \"bitcoin-cash\",\n            \"symbol\": \"bch\",\n            \"current_price\": 471.72,\n            \"name\": \"Bitcoin Cash\",\n            \"image\": \"https://assets.coingecko.com/coins/images/780/large/bitcoin-cash-circle.png?1594689492\",\n            \"last_updated\": \"2021-07-27T02:41:51.327Z\"\n        },\n        {\n            \"id\": \"litecoin\",\n            \"symbol\": \"ltc\",\n            \"current_price\": 129.08,\n            \"name\": \"Litecoin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/2/large/litecoin.png?1547033580\",\n            \"last_updated\": \"2021-07-27T02:42:15.896Z\"\n        },\n        {\n            \"id\": \"chainlink\",\n            \"symbol\": \"link\",\n            \"current_price\": 17.83,\n            \"name\": \"Chainlink\",\n            \"image\": \"https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1547034700\",\n            \"last_updated\": \"2021-07-27T02:42:05.555Z\"\n        },\n        {\n            \"id\": \"solana\",\n            \"symbol\": \"sol\",\n            \"current_price\": 27.54,\n            \"name\": \"Solana\",\n            \"image\": \"https://assets.coingecko.com/coins/images/4128/large/coinmarketcap-solana-200.png?1616489452\",\n            \"last_updated\": \"2021-07-27T02:42:11.974Z\"\n        },\n        {\n            \"id\": \"wrapped-bitcoin\",\n            \"symbol\": \"wbtc\",\n            \"current_price\": 36966,\n            \"name\": \"Wrapped Bitcoin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png?1548822744\",\n            \"last_updated\": \"2021-07-27T02:42:02.082Z\"\n        },\n        {\n            \"id\": \"matic-network\",\n            \"symbol\": \"matic\",\n            \"current_price\": 0.949569,\n            \"name\": \"Polygon\",\n            \"image\": \"https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png?1624446912\",\n            \"last_updated\": \"2021-07-27T02:41:58.081Z\"\n        },\n        {\n            \"id\": \"ethereum-classic\",\n            \"symbol\": \"etc\",\n            \"current_price\": 46.82,\n            \"name\": \"Ethereum Classic\",\n            \"image\": \"https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png?1547034169\",\n            \"last_updated\": \"2021-07-27T02:42:15.120Z\"\n        },\n        {\n            \"id\": \"stellar\",\n            \"symbol\": \"xlm\",\n            \"current_price\": 0.254229,\n            \"name\": \"Stellar\",\n            \"image\": \"https://assets.coingecko.com/coins/images/100/large/Stellar_symbol_black_RGB.png?1552356157\",\n            \"last_updated\": \"2021-07-27T02:42:00.688Z\"\n        },\n        {\n            \"id\": \"theta-token\",\n            \"symbol\": \"theta\",\n            \"current_price\": 5.36,\n            \"name\": \"Theta Network\",\n            \"image\": \"https://assets.coingecko.com/coins/images/2538/large/theta-token-logo.png?1548387191\",\n            \"last_updated\": \"2021-07-27T02:42:14.795Z\"\n        },\n        {\n            \"id\": \"dai\",\n            \"symbol\": \"dai\",\n            \"current_price\": 0.999869,\n            \"name\": \"Dai\",\n            \"image\": \"https://assets.coingecko.com/coins/images/9956/large/dai-multi-collateral-mcd.png?1574218774\",\n            \"last_updated\": \"2021-07-27T02:05:29.874Z\"\n        },\n        {\n            \"id\": \"internet-computer\",\n            \"symbol\": \"icp\",\n            \"current_price\": 38.13,\n            \"name\": \"Internet Computer\",\n            \"image\": \"https://assets.coingecko.com/coins/images/14495/large/Internet_Computer_logo.png?1620703073\",\n            \"last_updated\": \"2021-07-27T02:41:57.537Z\"\n        },\n        {\n            \"id\": \"vechain\",\n            \"symbol\": \"vet\",\n            \"current_price\": 0.075886,\n            \"name\": \"VeChain\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1167/large/VeChain-Logo-768x725.png?1547035194\",\n            \"last_updated\": \"2021-07-27T02:42:12.488Z\"\n        },\n        {\n            \"id\": \"compound-usd-coin\",\n            \"symbol\": \"cusdc\",\n            \"current_price\": 0.02209449,\n            \"name\": \"cUSDC\",\n            \"image\": \"https://assets.coingecko.com/coins/images/9442/large/Compound_USDC.png?1567581577\",\n            \"last_updated\": \"2021-07-27T02:30:51.229Z\"\n        },\n        {\n            \"id\": \"cdai\",\n            \"symbol\": \"cdai\",\n            \"current_price\": 0.0215512,\n            \"name\": \"cDAI\",\n            \"image\": \"https://assets.coingecko.com/coins/images/9281/large/cDAI.png?1576467585\",\n            \"last_updated\": \"2021-07-27T02:30:50.838Z\"\n        },\n        {\n            \"id\": \"filecoin\",\n            \"symbol\": \"fil\",\n            \"current_price\": 47.86,\n            \"name\": \"Filecoin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12817/large/filecoin.png?1602753933\",\n            \"last_updated\": \"2021-07-27T02:41:29.203Z\"\n        },\n        {\n            \"id\": \"okb\",\n            \"symbol\": \"okb\",\n            \"current_price\": 15.54,\n            \"name\": \"OKB\",\n            \"image\": \"https://assets.coingecko.com/coins/images/4463/large/okb_token.png?1548386209\",\n            \"last_updated\": \"2021-07-27T02:41:34.683Z\"\n        },\n        {\n            \"id\": \"tron\",\n            \"symbol\": \"trx\",\n            \"current_price\": 0.057537,\n            \"name\": \"TRON\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1094/large/tron-logo.png?1547035066\",\n            \"last_updated\": \"2021-07-27T02:42:14.027Z\"\n        },\n        {\n            \"id\": \"monero\",\n            \"symbol\": \"xmr\",\n            \"current_price\": 217.38,\n            \"name\": \"Monero\",\n            \"image\": \"https://assets.coingecko.com/coins/images/69/large/monero_logo.png?1547033729\",\n            \"last_updated\": \"2021-07-27T02:40:25.867Z\"\n        },\n        {\n            \"id\": \"aave\",\n            \"symbol\": \"aave\",\n            \"current_price\": 293.04,\n            \"name\": \"Aave\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12645/large/AAVE.png?1601374110\",\n            \"last_updated\": \"2021-07-27T02:41:59.565Z\"\n        },\n        {\n            \"id\": \"eos\",\n            \"symbol\": \"eos\",\n            \"current_price\": 3.64,\n            \"name\": \"EOS\",\n            \"image\": \"https://assets.coingecko.com/coins/images/738/large/eos-eos-logo.png?1547034481\",\n            \"last_updated\": \"2021-07-27T02:41:54.152Z\"\n        },\n        {\n            \"id\": \"terra-luna\",\n            \"symbol\": \"luna\",\n            \"current_price\": 8.15,\n            \"name\": \"Terra\",\n            \"image\": \"https://assets.coingecko.com/coins/images/8284/large/luna1557227471663.png?1567147072\",\n            \"last_updated\": \"2021-07-27T02:41:29.972Z\"\n        },\n        {\n            \"id\": \"compound-ether\",\n            \"symbol\": \"ceth\",\n            \"current_price\": 43.7,\n            \"name\": \"cETH\",\n            \"image\": \"https://assets.coingecko.com/coins/images/10643/large/ceth2.JPG?1581389598\",\n            \"last_updated\": \"2021-07-27T02:30:51.140Z\"\n        },\n        {\n            \"id\": \"ftx-token\",\n            \"symbol\": \"ftt\",\n            \"current_price\": 29,\n            \"name\": \"FTX Token\",\n            \"image\": \"https://assets.coingecko.com/coins/images/9026/large/F.png?1609051564\",\n            \"last_updated\": \"2021-07-27T02:41:12.765Z\"\n        },\n        {\n            \"id\": \"amp-token\",\n            \"symbol\": \"amp\",\n            \"current_price\": 0.064369,\n            \"name\": \"Amp\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12409/large/amp-200x200.png?1599625397\",\n            \"last_updated\": \"2021-07-27T02:41:59.699Z\"\n        },\n        {\n            \"id\": \"cosmos\",\n            \"symbol\": \"atom\",\n            \"current_price\": 11.1,\n            \"name\": \"Cosmos\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1481/large/cosmos_hub.png?1555657960\",\n            \"last_updated\": \"2021-07-27T02:42:02.454Z\"\n        },\n        {\n            \"id\": \"shiba-inu\",\n            \"symbol\": \"shib\",\n            \"current_price\": 0.00000612,\n            \"name\": \"Shiba Inu\",\n            \"image\": \"https://assets.coingecko.com/coins/images/11939/large/shiba.png?1622619446\",\n            \"last_updated\": \"2021-07-27T02:41:32.483Z\"\n        },\n        {\n            \"id\": \"crypto-com-chain\",\n            \"symbol\": \"cro\",\n            \"current_price\": 0.116387,\n            \"name\": \"Crypto.com Coin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/7310/large/cypto.png?1547043960\",\n            \"last_updated\": \"2021-07-27T02:41:38.918Z\"\n        },\n        {\n            \"id\": \"pancakeswap-token\",\n            \"symbol\": \"cake\",\n            \"current_price\": 13.99,\n            \"name\": \"PancakeSwap\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12632/large/IMG_0440.PNG?1602654093\",\n            \"last_updated\": \"2021-07-27T02:42:06.363Z\"\n        },\n        {\n            \"id\": \"leo-token\",\n            \"symbol\": \"leo\",\n            \"current_price\": 2.82,\n            \"name\": \"LEO Token\",\n            \"image\": \"https://assets.coingecko.com/coins/images/8418/large/leo-token.png?1558326215\",\n            \"last_updated\": \"2021-07-27T02:39:00.282Z\"\n        },\n        {\n            \"id\": \"algorand\",\n            \"symbol\": \"algo\",\n            \"current_price\": 0.831113,\n            \"name\": \"Algorand\",\n            \"image\": \"https://assets.coingecko.com/coins/images/4380/large/download.png?1547039725\",\n            \"last_updated\": \"2021-07-27T02:41:56.589Z\"\n        },\n        {\n            \"id\": \"celsius-degree-token\",\n            \"symbol\": \"cel\",\n            \"current_price\": 5.78,\n            \"name\": \"Celsius Network\",\n            \"image\": \"https://assets.coingecko.com/coins/images/3263/large/CEL_logo.png?1609598753\",\n            \"last_updated\": \"2021-07-27T02:41:11.700Z\"\n        },\n        {\n            \"id\": \"klay-token\",\n            \"symbol\": \"klay\",\n            \"current_price\": 0.974245,\n            \"name\": \"Klaytn\",\n            \"image\": \"https://assets.coingecko.com/coins/images/9672/large/CjbT82vP_400x400.jpg?1570548320\",\n            \"last_updated\": \"2021-07-27T02:41:10.131Z\"\n        },\n        {\n            \"id\": \"bitcoin-cash-sv\",\n            \"symbol\": \"bsv\",\n            \"current_price\": 129.02,\n            \"name\": \"Bitcoin SV\",\n            \"image\": \"https://assets.coingecko.com/coins/images/6799/large/BSV.png?1558947902\",\n            \"last_updated\": \"2021-07-27T02:41:30.136Z\"\n        },\n        {\n            \"id\": \"tezos\",\n            \"symbol\": \"xtz\",\n            \"current_price\": 2.76,\n            \"name\": \"Tezos\",\n            \"image\": \"https://assets.coingecko.com/coins/images/976/large/Tezos-logo.png?1547034862\",\n            \"last_updated\": \"2021-07-27T02:41:38.865Z\"\n        },\n        {\n            \"id\": \"maker\",\n            \"symbol\": \"mkr\",\n            \"current_price\": 2525.94,\n            \"name\": \"Maker\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1364/large/Mark_Maker.png?1585191826\",\n            \"last_updated\": \"2021-07-27T02:41:54.677Z\"\n        },\n        {\n            \"id\": \"neo\",\n            \"symbol\": \"neo\",\n            \"current_price\": 31.84,\n            \"name\": \"NEO\",\n            \"image\": \"https://assets.coingecko.com/coins/images/480/large/NEO_512_512.png?1594357361\",\n            \"last_updated\": \"2021-07-27T02:41:57.054Z\"\n        },\n        {\n            \"id\": \"compound-governance-token\",\n            \"symbol\": \"comp\",\n            \"current_price\": 381.24,\n            \"name\": \"Compound\",\n            \"image\": \"https://assets.coingecko.com/coins/images/10775/large/COMP.png?1592625425\",\n            \"last_updated\": \"2021-07-27T02:41:54.502Z\"\n        },\n        {\n            \"id\": \"axie-infinity\",\n            \"symbol\": \"axs\",\n            \"current_price\": 36.98,\n            \"name\": \"Axie Infinity\",\n            \"image\": \"https://assets.coingecko.com/coins/images/13029/large/axie_infinity_logo.png?1604471082\",\n            \"last_updated\": \"2021-07-27T02:41:13.172Z\"\n        },\n        {\n            \"id\": \"iota\",\n            \"symbol\": \"miota\",\n            \"current_price\": 0.732439,\n            \"name\": \"IOTA\",\n            \"image\": \"https://assets.coingecko.com/coins/images/692/large/IOTA_Swirl.png?1604238557\",\n            \"last_updated\": \"2021-07-27T02:41:16.256Z\"\n        },\n        {\n            \"id\": \"terrausd\",\n            \"symbol\": \"ust\",\n            \"current_price\": 0.999209,\n            \"name\": \"TerraUSD\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12681/large/UST.png?1601612407\",\n            \"last_updated\": \"2021-07-27T02:40:31.890Z\"\n        },\n        {\n            \"id\": \"avalanche-2\",\n            \"symbol\": \"AVAX\",\n            \"current_price\": 11.24,\n            \"name\": \"Avalanche\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12559/large/coin-round-red.png?1604021818\",\n            \"last_updated\": \"2021-07-27T02:41:06.221Z\"\n        },\n        {\n            \"id\": \"theta-fuel\",\n            \"symbol\": \"tfuel\",\n            \"current_price\": 0.314482,\n            \"name\": \"Theta Fuel\",\n            \"image\": \"https://assets.coingecko.com/coins/images/8029/large/1_0YusgngOrriVg4ZYx4wOFQ.png?1553483622\",\n            \"last_updated\": \"2021-07-27T02:41:47.878Z\"\n        },\n        {\n            \"id\": \"decred\",\n            \"symbol\": \"dcr\",\n            \"current_price\": 127.56,\n            \"name\": \"Decred\",\n            \"image\": \"https://assets.coingecko.com/coins/images/329/large/decred.png?1547034093\",\n            \"last_updated\": \"2021-07-27T02:40:22.195Z\"\n        },\n        {\n            \"id\": \"hedera-hashgraph\",\n            \"symbol\": \"hbar\",\n            \"current_price\": 0.181092,\n            \"name\": \"Hedera Hashgraph\",\n            \"image\": \"https://assets.coingecko.com/coins/images/3688/large/mqTDGK7Q.png?1566256777\",\n            \"last_updated\": \"2021-07-27T02:41:15.581Z\"\n        },\n        {\n            \"id\": \"bittorrent-2\",\n            \"symbol\": \"btt\",\n            \"current_price\": 0.00248384,\n            \"name\": \"BitTorrent\",\n            \"image\": \"https://assets.coingecko.com/coins/images/7595/large/BTT_Token_Graphic.png?1555066995\",\n            \"last_updated\": \"2021-07-27T02:41:52.016Z\"\n        },\n        {\n            \"id\": \"elrond-erd-2\",\n            \"symbol\": \"egld\",\n            \"current_price\": 82.83,\n            \"name\": \"Elrond\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12335/large/elrond3_360.png?1626341589\",\n            \"last_updated\": \"2021-07-27T02:41:08.189Z\"\n        },\n        {\n            \"id\": \"kusama\",\n            \"symbol\": \"ksm\",\n            \"current_price\": 179.03,\n            \"name\": \"Kusama\",\n            \"image\": \"https://assets.coingecko.com/coins/images/9568/large/m4zRhP5e_400x400.jpg?1576190080\",\n            \"last_updated\": \"2021-07-27T02:41:38.053Z\"\n        },\n        {\n            \"id\": \"huobi-token\",\n            \"symbol\": \"ht\",\n            \"current_price\": 9.51,\n            \"name\": \"Huobi Token\",\n            \"image\": \"https://assets.coingecko.com/coins/images/2822/large/huobi-token-logo.png?1547036992\",\n            \"last_updated\": \"2021-07-27T02:40:14.783Z\"\n        },\n        {\n            \"id\": \"the-graph\",\n            \"symbol\": \"grt\",\n            \"current_price\": 0.532993,\n            \"name\": \"The Graph\",\n            \"image\": \"https://assets.coingecko.com/coins/images/13397/large/Graph_Token.png?1608145566\",\n            \"last_updated\": \"2021-07-27T02:41:32.691Z\"\n        },\n        {\n            \"id\": \"sushi\",\n            \"symbol\": \"sushi\",\n            \"current_price\": 7.96,\n            \"name\": \"Sushi\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12271/large/512x512_Logo_no_chop.png?1606986688\",\n            \"last_updated\": \"2021-07-27T02:41:48.630Z\"\n        },\n        {\n            \"id\": \"safemoon\",\n            \"symbol\": \"safemoon\",\n            \"current_price\": 0.00000264,\n            \"name\": \"SafeMoon\",\n            \"image\": \"https://assets.coingecko.com/coins/images/14362/large/174x174-white.png?1617174846\",\n            \"last_updated\": \"2021-07-27T02:42:02.057Z\"\n        },\n        {\n            \"id\": \"havven\",\n            \"symbol\": \"snx\",\n            \"current_price\": 8.88,\n            \"name\": \"Synthetix Network Token\",\n            \"image\": \"https://assets.coingecko.com/coins/images/3406/large/SNX.png?1598631139\",\n            \"last_updated\": \"2021-07-27T02:42:11.032Z\"\n        },\n        {\n            \"id\": \"huobi-btc\",\n            \"symbol\": \"hbtc\",\n            \"current_price\": 37122,\n            \"name\": \"Huobi BTC\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12407/large/Unknown-5.png?1599624896\",\n            \"last_updated\": \"2021-07-27T02:41:00.375Z\"\n        },\n        {\n            \"id\": \"waves\",\n            \"symbol\": \"waves\",\n            \"current_price\": 14.54,\n            \"name\": \"Waves\",\n            \"image\": \"https://assets.coingecko.com/coins/images/425/large/waves.png?1548386117\",\n            \"last_updated\": \"2021-07-27T02:42:15.075Z\"\n        },\n        {\n            \"id\": \"staked-ether\",\n            \"symbol\": \"steth\",\n            \"current_price\": 2162.8,\n            \"name\": \"Lido Staked Ether\",\n            \"image\": \"https://assets.coingecko.com/coins/images/13442/large/steth_logo.png?1608607546\",\n            \"last_updated\": \"2021-07-27T02:40:53.406Z\"\n        },\n        {\n            \"id\": \"dash\",\n            \"symbol\": \"dash\",\n            \"current_price\": 138.81,\n            \"name\": \"Dash\",\n            \"image\": \"https://assets.coingecko.com/coins/images/19/large/dash-logo.png?1548385930\",\n            \"last_updated\": \"2021-07-27T02:41:59.422Z\"\n        },\n        {\n            \"id\": \"nem\",\n            \"symbol\": \"xem\",\n            \"current_price\": 0.152547,\n            \"name\": \"NEM\",\n            \"image\": \"https://assets.coingecko.com/coins/images/242/large/NEM_Logo_256x256.png?1598687029\",\n            \"last_updated\": \"2021-07-27T02:42:05.358Z\"\n        },\n        {\n            \"id\": \"chiliz\",\n            \"symbol\": \"chz\",\n            \"current_price\": 0.241523,\n            \"name\": \"Chiliz\",\n            \"image\": \"https://assets.coingecko.com/coins/images/8834/large/Chiliz.png?1561970540\",\n            \"last_updated\": \"2021-07-27T02:41:50.769Z\"\n        },\n        {\n            \"id\": \"true-usd\",\n            \"symbol\": \"tusd\",\n            \"current_price\": 0.999172,\n            \"name\": \"TrueUSD\",\n            \"image\": \"https://assets.coingecko.com/coins/images/3449/large/tusd.png?1618395665\",\n            \"last_updated\": \"2021-07-27T02:41:56.943Z\"\n        },\n        {\n            \"id\": \"enjincoin\",\n            \"symbol\": \"enj\",\n            \"current_price\": 1.24,\n            \"name\": \"Enjin Coin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1102/large/enjin-coin-logo.png?1547035078\",\n            \"last_updated\": \"2021-07-27T02:42:17.912Z\"\n        },\n        {\n            \"id\": \"blockstack\",\n            \"symbol\": \"stx\",\n            \"current_price\": 1.08,\n            \"name\": \"Stacks\",\n            \"image\": \"https://assets.coingecko.com/coins/images/2069/large/Stacks_logo_full.png?1604112510\",\n            \"last_updated\": \"2021-07-27T02:41:05.078Z\"\n        },\n        {\n            \"id\": \"quant-network\",\n            \"symbol\": \"qnt\",\n            \"current_price\": 86.9,\n            \"name\": \"Quant\",\n            \"image\": \"https://assets.coingecko.com/coins/images/3370/large/5ZOu7brX_400x400.jpg?1612437252\",\n            \"last_updated\": \"2021-07-27T02:41:18.185Z\"\n        },\n        {\n            \"id\": \"zcash\",\n            \"symbol\": \"zec\",\n            \"current_price\": 98.38,\n            \"name\": \"Zcash\",\n            \"image\": \"https://assets.coingecko.com/coins/images/486/large/circle-zcash-color.png?1547034197\",\n            \"last_updated\": \"2021-07-27T02:42:13.685Z\"\n        },\n        {\n            \"id\": \"bitclout\",\n            \"symbol\": \"clout\",\n            \"current_price\": 100.42,\n            \"name\": \"BitClout\",\n            \"image\": \"https://assets.coingecko.com/coins/images/16310/large/k-h6Wead_400x400.jpg?1623726134\",\n            \"last_updated\": \"2021-07-27T02:32:28.186Z\"\n        },\n        {\n            \"id\": \"yearn-finance\",\n            \"symbol\": \"yfi\",\n            \"current_price\": 29324,\n            \"name\": \"yearn.finance\",\n            \"image\": \"https://assets.coingecko.com/coins/images/11849/large/yfi-192x192.png?1598325330\",\n            \"last_updated\": \"2021-07-27T02:41:30.534Z\"\n        },\n        {\n            \"id\": \"telcoin\",\n            \"symbol\": \"tel\",\n            \"current_price\": 0.01814196,\n            \"name\": \"Telcoin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1899/large/tel.png?1547036203\",\n            \"last_updated\": \"2021-07-27T02:37:04.820Z\"\n        },\n        {\n            \"id\": \"helium\",\n            \"symbol\": \"hnt\",\n            \"current_price\": 11.12,\n            \"name\": \"Helium\",\n            \"image\": \"https://assets.coingecko.com/coins/images/4284/large/Helium_HNT.png?1612620071\",\n            \"last_updated\": \"2021-07-27T02:41:06.106Z\"\n        },\n        {\n            \"id\": \"holotoken\",\n            \"symbol\": \"hot\",\n            \"current_price\": 0.00566448,\n            \"name\": \"Holo\",\n            \"image\": \"https://assets.coingecko.com/coins/images/3348/large/Holologo_Profile.png?1547037966\",\n            \"last_updated\": \"2021-07-27T02:41:54.286Z\"\n        },\n        {\n            \"id\": \"thorchain\",\n            \"symbol\": \"rune\",\n            \"current_price\": 3.66,\n            \"name\": \"THORChain\",\n            \"image\": \"https://assets.coingecko.com/coins/images/6595/large/RUNE.png?1614160507\",\n            \"last_updated\": \"2021-07-27T02:40:17.970Z\"\n        },\n        {\n            \"id\": \"xdce-crowd-sale\",\n            \"symbol\": \"xdc\",\n            \"current_price\": 0.077851,\n            \"name\": \"XDC Network\",\n            \"image\": \"https://assets.coingecko.com/coins/images/2912/large/xdc-logo.png?1589242157\",\n            \"last_updated\": \"2021-07-27T02:42:12.806Z\"\n        },\n        {\n            \"id\": \"paxos-standard\",\n            \"symbol\": \"pax\",\n            \"current_price\": 0.998766,\n            \"name\": \"Paxos Standard\",\n            \"image\": \"https://assets.coingecko.com/coins/images/6013/large/paxos_standard.png?1548386291\",\n            \"last_updated\": \"2021-07-27T02:41:43.410Z\"\n        },\n        {\n            \"id\": \"flow\",\n            \"symbol\": \"flow\",\n            \"current_price\": 16.98,\n            \"name\": \"Flow\",\n            \"image\": \"https://assets.coingecko.com/coins/images/13446/large/flow_logo.jpg?1608631239\",\n            \"last_updated\": \"2021-07-27T02:41:15.628Z\"\n        },\n        {\n            \"id\": \"nexo\",\n            \"symbol\": \"nexo\",\n            \"current_price\": 1.58,\n            \"name\": \"NEXO\",\n            \"image\": \"https://assets.coingecko.com/coins/images/3695/large/nexo.png?1548086057\",\n            \"last_updated\": \"2021-07-27T02:41:33.754Z\"\n        },\n        {\n            \"id\": \"near\",\n            \"symbol\": \"near\",\n            \"current_price\": 2.09,\n            \"name\": \"Near\",\n            \"image\": \"https://assets.coingecko.com/coins/images/10365/large/near_icon.png?1601359077\",\n            \"last_updated\": \"2021-07-27T02:42:00.407Z\"\n        },\n        {\n            \"id\": \"zilliqa\",\n            \"symbol\": \"zil\",\n            \"current_price\": 0.070501,\n            \"name\": \"Zilliqa\",\n            \"image\": \"https://assets.coingecko.com/coins/images/2687/large/Zilliqa-logo.png?1547036894\",\n            \"last_updated\": \"2021-07-27T02:41:30.433Z\"\n        },\n        {\n            \"id\": \"decentraland\",\n            \"symbol\": \"mana\",\n            \"current_price\": 0.653412,\n            \"name\": \"Decentraland\",\n            \"image\": \"https://assets.coingecko.com/coins/images/878/large/decentraland-mana.png?1550108745\",\n            \"last_updated\": \"2021-07-27T02:41:52.989Z\"\n        },\n        {\n            \"id\": \"basic-attention-token\",\n            \"symbol\": \"bat\",\n            \"current_price\": 0.542358,\n            \"name\": \"Basic Attention Token\",\n            \"image\": \"https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427\",\n            \"last_updated\": \"2021-07-27T02:42:09.619Z\"\n        },\n        {\n            \"id\": \"bitcoin-gold\",\n            \"symbol\": \"btg\",\n            \"current_price\": 44.42,\n            \"name\": \"Bitcoin Gold\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1043/large/bitcoin-gold-logo.png?1547034978\",\n            \"last_updated\": \"2021-07-27T02:41:31.722Z\"\n        },\n        {\n            \"id\": \"kucoin-shares\",\n            \"symbol\": \"kcs\",\n            \"current_price\": 9.48,\n            \"name\": \"KuCoin Token\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1047/large/sa9z79.png?1610678720\",\n            \"last_updated\": \"2021-07-27T02:40:11.405Z\"\n        },\n        {\n            \"id\": \"bancor\",\n            \"symbol\": \"bnt\",\n            \"current_price\": 3.1,\n            \"name\": \"Bancor Network Token\",\n            \"image\": \"https://assets.coingecko.com/coins/images/736/large/bancor.png?1547034477\",\n            \"last_updated\": \"2021-07-27T02:41:30.728Z\"\n        },\n        {\n            \"id\": \"harmony\",\n            \"symbol\": \"one\",\n            \"current_price\": 0.070649,\n            \"name\": \"Harmony\",\n            \"image\": \"https://assets.coingecko.com/coins/images/4344/large/Y88JAze.png?1565065793\",\n            \"last_updated\": \"2021-07-27T02:40:30.257Z\"\n        },\n        {\n            \"id\": \"titanswap\",\n            \"symbol\": \"titan\",\n            \"current_price\": 7.09,\n            \"name\": \"TitanSwap\",\n            \"image\": \"https://assets.coingecko.com/coins/images/12606/large/nqGlQzdz_400x400.png?1601019805\",\n            \"last_updated\": \"2021-07-27T02:40:48.350Z\"\n        },\n        {\n            \"id\": \"mdex\",\n            \"symbol\": \"mdx\",\n            \"current_price\": 1.15,\n            \"name\": \"Mdex\",\n            \"image\": \"https://assets.coingecko.com/coins/images/13775/large/mdex.png?1611739676\",\n            \"last_updated\": \"2021-07-27T02:40:26.250Z\"\n        },\n        {\n            \"id\": \"swissborg\",\n            \"symbol\": \"chsb\",\n            \"current_price\": 0.669112,\n            \"name\": \"SwissBorg\",\n            \"image\": \"https://assets.coingecko.com/coins/images/2117/large/YJUrRy7r_400x400.png?1589794215\",\n            \"last_updated\": \"2021-07-27T02:35:20.037Z\"\n        },\n        {\n            \"id\": \"qtum\",\n            \"symbol\": \"qtum\",\n            \"current_price\": 6.12,\n            \"name\": \"Qtum\",\n            \"image\": \"https://assets.coingecko.com/coins/images/684/large/qtum.png?1547034438\",\n            \"last_updated\": \"2021-07-27T02:42:05.878Z\"\n        },\n        {\n            \"id\": \"compound-usdt\",\n            \"symbol\": \"cusdt\",\n            \"current_price\": 0.02126533,\n            \"name\": \"cUSDT\",\n            \"image\": \"https://assets.coingecko.com/coins/images/11621/large/cUSDT.png?1592113270\",\n            \"last_updated\": \"2021-07-27T02:30:51.370Z\"\n        },\n        {\n            \"id\": \"xsushi\",\n            \"symbol\": \"xsushi\",\n            \"current_price\": 9.3,\n            \"name\": \"xSUSHI\",\n            \"image\": \"https://assets.coingecko.com/coins/images/13725/large/xsushi.png?1612538526\",\n            \"last_updated\": \"2021-07-27T02:33:14.692Z\"\n        },\n        {\n            \"id\": \"zencash\",\n            \"symbol\": \"zen\",\n            \"current_price\": 52.84,\n            \"name\": \"Horizen\",\n            \"image\": \"https://assets.coingecko.com/coins/images/691/large/horizen.png?1555052241\",\n            \"last_updated\": \"2021-07-27T02:40:54.612Z\"\n        },\n        {\n            \"id\": \"digibyte\",\n            \"symbol\": \"dgb\",\n            \"current_price\": 0.04142459,\n            \"name\": \"DigiByte\",\n            \"image\": \"https://assets.coingecko.com/coins/images/63/large/digibyte.png?1547033717\",\n            \"last_updated\": \"2021-07-27T02:41:18.453Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "GetCoinListFail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/coins?vs_currency=dsfh&per_page=100&page=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"coins"
+									],
+									"query": [
+										{
+											"key": "vs_currency",
+											"value": "dsfh"
+										},
+										{
+											"key": "per_page",
+											"value": "100"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-xdeWb4HCafb5sfVjIuiW45aJ5WQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Jul 2021 14:18:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Ingrese el tipo de moneda preferido entre usd, euro, ars\"\n}"
 						}
 					]
 				},
@@ -693,75 +693,7 @@
 					},
 					"response": [
 						{
-							"name": "GetTopCoins",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/coins/top?top_n=5&order=asc",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"coins",
-										"top"
-									],
-									"query": [
-										{
-											"key": "top_n",
-											"value": "5"
-										},
-										{
-											"key": "order",
-											"value": "asc"
-										}
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "41"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"29-lVukocKN//DKImZvY/Tkayxrhk4\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 27 Jul 2021 02:42:31 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"message\": \"el usuario no tiene monedas\"\n}"
-						},
-						{
-							"name": "GetTopCoins",
+							"name": "GetTopCoinsOkasc",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -829,7 +761,7 @@
 							"body": "{\n    \"message\": \"top de monedas encontradas con éxito\",\n    \"data\": [\n        {\n            \"symbol\": \"etc\",\n            \"name\": \"Ethereum Classic\",\n            \"image\": \"https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png?1547034169\",\n            \"usd\": 46.64,\n            \"ars\": 4489.11,\n            \"eur\": 39.51,\n            \"last_updated\": \"2021-07-27T02:46:20.472Z\"\n        },\n        {\n            \"symbol\": \"xmr\",\n            \"name\": \"Monero\",\n            \"image\": \"https://assets.coingecko.com/coins/images/69/large/monero_logo.png?1547033729\",\n            \"usd\": 216.23,\n            \"ars\": 20813,\n            \"eur\": 183.19,\n            \"last_updated\": \"2021-07-27T02:46:10.149Z\"\n        },\n        {\n            \"symbol\": \"bnb\",\n            \"name\": \"Binance Coin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png?1547034615\",\n            \"usd\": 300.79,\n            \"ars\": 28956,\n            \"eur\": 254.84,\n            \"last_updated\": \"2021-07-27T02:44:46.680Z\"\n        },\n        {\n            \"symbol\": \"eth\",\n            \"name\": \"Ethereum\",\n            \"image\": \"https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880\",\n            \"usd\": 2164.45,\n            \"ars\": 208361,\n            \"eur\": 1833.82,\n            \"last_updated\": \"2021-07-27T02:45:38.030Z\"\n        },\n        {\n            \"symbol\": \"btc\",\n            \"name\": \"Bitcoin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579\",\n            \"usd\": 36804,\n            \"ars\": 3542932,\n            \"eur\": 31182,\n            \"last_updated\": \"2021-07-27T02:45:43.640Z\"\n        }\n    ]\n}"
 						},
 						{
-							"name": "GetTopCoins",
+							"name": "GetTopCoinsDesc",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -897,7 +829,75 @@
 							"body": "{\n    \"message\": \"top de monedas encontradas con éxito\",\n    \"data\": [\n        {\n            \"symbol\": \"btc\",\n            \"name\": \"Bitcoin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579\",\n            \"usd\": 36804,\n            \"ars\": 3542932,\n            \"eur\": 31182,\n            \"last_updated\": \"2021-07-27T02:45:43.640Z\"\n        },\n        {\n            \"symbol\": \"eth\",\n            \"name\": \"Ethereum\",\n            \"image\": \"https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880\",\n            \"usd\": 2164.45,\n            \"ars\": 208361,\n            \"eur\": 1833.82,\n            \"last_updated\": \"2021-07-27T02:45:38.030Z\"\n        },\n        {\n            \"symbol\": \"bnb\",\n            \"name\": \"Binance Coin\",\n            \"image\": \"https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png?1547034615\",\n            \"usd\": 300.79,\n            \"ars\": 28956,\n            \"eur\": 254.84,\n            \"last_updated\": \"2021-07-27T02:44:46.680Z\"\n        },\n        {\n            \"symbol\": \"xmr\",\n            \"name\": \"Monero\",\n            \"image\": \"https://assets.coingecko.com/coins/images/69/large/monero_logo.png?1547033729\",\n            \"usd\": 216.23,\n            \"ars\": 20813,\n            \"eur\": 183.19,\n            \"last_updated\": \"2021-07-27T02:46:10.149Z\"\n        },\n        {\n            \"symbol\": \"etc\",\n            \"name\": \"Ethereum Classic\",\n            \"image\": \"https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png?1547034169\",\n            \"usd\": 46.64,\n            \"ars\": 4489.11,\n            \"eur\": 39.51,\n            \"last_updated\": \"2021-07-27T02:46:20.472Z\"\n        }\n    ]\n}"
 						},
 						{
-							"name": "GetTopCoins",
+							"name": "GetTopCoinsFail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/coins/top?top_n=5&order=asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"coins",
+										"top"
+									],
+									"query": [
+										{
+											"key": "top_n",
+											"value": "5"
+										},
+										{
+											"key": "order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-lVukocKN//DKImZvY/Tkayxrhk4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Jul 2021 02:42:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"el usuario no tiene monedas\"\n}"
+						},
+						{
+							"name": "GetTopCoinsTopnF",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -1005,7 +1005,7 @@
 					},
 					"response": [
 						{
-							"name": "SaveCoin",
+							"name": "SaveCoinOk",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -1071,73 +1071,7 @@
 							"body": "{\n    \"message\": \"moneda guardada con éxito\",\n    \"data\": {\n        \"coin_id\": \"dogecoin\",\n        \"user_id\": \"6b64b817-cd3e-4c48-8633-8f3e9816ab8c\",\n        \"id\": \"cafbdc74-ac43-4ced-8c48-cb24cde57c4d\"\n    }\n}"
 						},
 						{
-							"name": "SaveCoin",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"coin_id\" : \"bitcoin\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3000/coins",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"coins"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "162"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"a2-g1NivikKC71cd3Fi3pP9t4i66ec\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 27 Jul 2021 02:43:12 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"message\": \"moneda guardada con éxito\",\n    \"data\": {\n        \"coin_id\": \"bitcoin\",\n        \"user_id\": \"6b64b817-cd3e-4c48-8633-8f3e9816ab8c\",\n        \"id\": \"1a62d471-18ef-42ce-8af5-1877677908e9\"\n    }\n}"
-						},
-						{
-							"name": "SaveCoin",
+							"name": "SaveCoinFail",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
