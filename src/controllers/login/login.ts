@@ -1,12 +1,13 @@
 import { Request, Response, NextFunction } from "express";
 import * as services from "../../services/login/login";
-import { Ilogin } from "../../interfaces/interfaces";
+import { Ilogin, IResp } from "../../interfaces/interfaces";
 
 export const userLogin = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const body: Ilogin = req.body;
-    const response: any = await services.userLogin(body);
-    response.failed
+    const response = await services.userLogin(body);
+    const result = <IResp>response;
+    result.failed
       ? next(response)
       : res.status(201).json({
           message: "Usuario logeado con éxito",

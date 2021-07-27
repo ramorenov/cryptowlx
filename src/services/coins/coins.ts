@@ -1,6 +1,6 @@
 import * as repositories from "../../repositories/coins/coins";
 import axios from "axios";
-import { ICoin, ITopCoin } from "../../interfaces/interfaces";
+import { ICoin, IRespCoin, ITopCoin } from "../../interfaces/interfaces";
 import { getUserById } from "../../repositories/users/users";
 
 export const getCoins = async (params: { vs_currency: string; ids: string; per_page: number; page: number }) => {
@@ -13,7 +13,7 @@ export const getCoins = async (params: { vs_currency: string; ids: string; per_p
   try {
     const response = await axios.get(url, requestOptions);
     const coins = response.data;
-    const result = coins.map((coin: any) => ({
+    const result = coins.map((coin: IRespCoin) => ({
       id: coin.id,
       symbol: coin.symbol,
       current_price: coin.current_price,
@@ -73,9 +73,9 @@ export const topCoins = async (topCoinData: ITopCoin) => {
 
     const result: {}[] = [];
     dataMarkets
-      .sort((a: any, b: any) => (a.current_price < b.current_price ? 1 : -1))
+      .sort((a: IRespCoin, b: IRespCoin) => (a.current_price < b.current_price ? 1 : -1))
       .slice(0, top_n)
-      .map(function (item: any, index: number) {
+      .map(function (item: IRespCoin, index: number) {
         const crypto = { symbol: item.symbol, name: item.name, image: item.image, ...dataPrices[item.id], last_updated: item.last_updated };
         result[index] = crypto;
       });

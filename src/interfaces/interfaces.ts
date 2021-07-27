@@ -26,7 +26,16 @@ export interface ITopCoin {
 }
 
 export interface IResp {
-  failed: boolean;
-  status: number;
-  message: any | string;
+  failed?: boolean;
+  status?: number;
+  message?: any | string;
+}
+
+export interface IRespCoin {
+  id: string;
+  symbol: string;
+  current_price: number;
+  name: string;
+  image: string;
+  last_updated: string;
 }

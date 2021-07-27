@@ -23,7 +23,7 @@ beforeEach(async () => {
       username: "ramorenov",
       password: "A123456a",
     })
-    .then((res: { body: any }) => {
+    .then((res: { body: { token: string } }) => {
       return res.body.token;
     });
 });
@@ -52,7 +52,7 @@ describe("GET /coins", () => {
       })
       .expect("Content-Type", /json/)
       .expect(200)
-      .then((res: { body: any }) => {
+      .then((res: Body) => {
         expect(res.body).toHaveProperty("data");
       });
   });
@@ -68,7 +68,7 @@ describe("GET /coins", () => {
       })
       .expect("Content-Type", /json/)
       .expect(400)
-      .then((res: { body: any }) => {
+      .then((res: Body) => {
         expect(res.body).toHaveProperty("message", "Ingrese el tipo de moneda preferido entre usd, euro, ars");
       });
   });
@@ -97,7 +97,7 @@ describe("POST /coins", () => {
       })
       .expect("Content-Type", /json/)
       .expect(500)
-      .then((res: { body: any }) => {
+      .then((res: Body) => {
         expect(res.body).toHaveProperty("message", "la moneda que intenta guardar no existe");
       });
   });
@@ -125,7 +125,7 @@ describe("GET /coins/top", () => {
       })
       .expect("Content-Type", /json/)
       .expect(200)
-      .then((res: { body: any }) => {
+      .then((res: Body) => {
         expect(res.body).toHaveProperty("data");
       });
   });
@@ -140,7 +140,7 @@ describe("GET /coins/top", () => {
       })
       .expect("Content-Type", /json/)
       .expect(400)
-      .then((res: { body: any }) => {
+      .then((res: Body) => {
         expect(res.body).toHaveProperty("message", "Ingrese un numero entero entre 1 y 25");
       });
   });

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import * as services from "../../services/users/users";
-import { IUser } from "../../interfaces/interfaces";
+import { IResp, IUser } from "../../interfaces/interfaces";
 import * as joi from "../../utils/joi/validate";
 
 export const createUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -10,8 +10,9 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
     if (valResult.failed) {
       return next(valResult);
     }
-    const response: any = await services.createUser(valResult);
-    response.failed
+    const response = await services.createUser(valResult);
+    const result = <IResp>response;
+    result.failed
       ? next(response)
       : res.status(201).json({
           message: "El usuario se creó con éxito",
@@ -26,8 +27,9 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
 };
 export const getUsers = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response: any = await services.getUsers();
-    response.failed ? next(response) : res.status(200).json({ message: "usuarios encontrados con éxito", data: response });
+    const response = await services.getUsers();
+    const result = <IResp>response;
+    result.failed ? next(response) : res.status(200).json({ message: "usuarios encontrados con éxito", data: response });
   } catch (error) {
     next({
       status: 400,

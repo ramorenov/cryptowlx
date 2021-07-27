@@ -1,4 +1,5 @@
 import { closeTypeOrmConn, createTypeOrmConn, openTypeOrmConn } from "../config/ormconnection";
+import { IUserR } from "../interfaces/interfaces";
 const request = require("supertest");
 const { app, server } = require("../index");
 
@@ -24,7 +25,7 @@ describe("POST /login", () => {
       })
       .expect("Content-Type", /json/)
       .expect(201)
-      .then((res: { body: any }) => {
+      .then((res: { body: IUserR }) => {
         expect(res.body).toHaveProperty("token");
       });
   });
@@ -37,7 +38,7 @@ describe("POST /login", () => {
         password: 2546,
       })
       .expect(401)
-      .then((res: { body: any }) => {
+      .then((res: Body) => {
         expect(res.body).toHaveProperty("message", "usuario o contraseña invalida");
       });
   });
