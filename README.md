@@ -20,11 +20,11 @@ Para ejecutar el proyecto necesitaras:
 
 En la terminal del sistema operativo, ubicado en la carpeta principal del proyecto CRYPTOWLX, ejecuta el comando **npm install**, para realizar la instalación de todas las dependencias requeridas.
 
-se debe crear un archivo .env en la raíz del proyecto para colocar la variable de entorno KEY_PRIVATE que servira como llave para encryptar la informacion y generar el token. eje:
+se debe crear un archivo .env en la raíz del proyecto para colocar la variable de entorno KEY_PRIVATE que servirá como llave para encryptar la información y generar el token. eje:
 
 KEY_PRIVATE=dafhasddfhaASFa56asg5
 
-Deberás crear previamente una base de datos en Postgres; para configurarla deberá crear el archivo ormconfig.json en la raíz del proyecto y copiar el siguiente array donde deberás definir las variables **_host,port,username,password y database_** para la conexión a la base de datos de desarrollo(dev) y la base de datos de testing (test),las demás variables se dejan como se muestra a continuación:
+Deberás crear previamente una base de datos en Postgres; para configurarla deberá crear el archivo ormconfig.json en la raíz del proyecto y copiar en este archivo el siguiente array donde deberás definir las variables **_host,port,username,password y database_** para la conexión a la base de datos de desarrollo (dev) y la base de datos de testing (test), las demás variables se dejan como se muestra a continuación:
 
 ```
 [
@@ -69,11 +69,11 @@ Deberás crear previamente una base de datos en Postgres; para configurarla debe
   ]
 ```
 
-Una vez que la instalación a finalizado puedes correr el proyecto con el comando **npm run dev**, por defecto se creara el servidor en el localhost:3000.
+Una vez que la instalación ha finalizado puedes correr el proyecto con el comando **npm run dev**, por defecto se creara el servidor en el localhost:3000.
 
 ## Ejecutando las pruebas ⚙️
 
-Para ejecutar las pruebas o test del proyecto es necesario haber completado todos los pasos de instalacion del proyecto y haber configurado correctamente la base de datos "test".
+Para ejecutar las pruebas o test del proyecto es necesario haber completado todos los pasos de instalación del proyecto y haber configurado correctamente la base de datos "test".
 Puede ejecutar los scripts para correr los test con el siguiente comando:
 
 - npm run test
@@ -87,15 +87,15 @@ Puede ejecutar los scripts para correr los test con el siguiente comando:
 - [JEST](https://jestjs.io//)
 - [JWT](https://jwt.io//)
 
-## Documentacion 📌
+## Documentación 📌
 
 Usé [Postman](https://www.postman.com/) para ejecutar y documentar los endpoints de la API.
 
-Puede importar la colección para postman disponible en la carpeta **postman** en la raiz del proyecto.
+Puede importar la colección para postman disponible en la carpeta **postman** en la raíz del proyecto.
 
-URL documentacion:
+URL documentación:
 
-[Documentacion](https://documenter.getpostman.com/view/13313578/TzsbMTN8)
+[Postman collection doc](https://documenter.getpostman.com/view/13313578/TzsbMTN8)
 
 ## Autores ✒️
 
