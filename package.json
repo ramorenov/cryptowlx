@@ -72,7 +72,8 @@
     "coveragePathIgnorePatterns":[
       "node_modules",
       "/test/",
-      "/dist/"
+      "/dist/",
+      "/migrations/"
     ]
 
   }

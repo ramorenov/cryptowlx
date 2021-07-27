@@ -1,10 +1,10 @@
-import { createTypeOrmConn } from "../config/ormconnection";
-
+import { createTypeOrmConn, openTypeOrmConn } from "../config/ormconnection";
 const request = require("supertest");
 const { app, server } = require("../index");
 
 beforeAll(async () => {
   await createTypeOrmConn();
+  await openTypeOrmConn();
 });
 
 describe("POST /login", () => {

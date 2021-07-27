@@ -36,7 +36,7 @@ export const saveCoin = async (coinData: ICoin) => {
   try {
     const coinVerify = await axios.get(url, requestOptions);
     if (coinVerify.data.length != 1) {
-      throw new Error(`la moneda que intenta guardar no existe`);
+      throw `la moneda que intenta guardar no existe`;
     }
     const response = await repositories.saveCoin(coinData);
 

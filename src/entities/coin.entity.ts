@@ -10,7 +10,7 @@ export class Coin {
   @Column({ nullable: false })
   coin_id: string;
 
-  @ManyToOne((type) => User, { nullable: false })
+  @ManyToOne((type) => User, { nullable: false, onDelete: "CASCADE" })
   @JoinColumn({ name: "user_id", referencedColumnName: "id" })
   user_id: string;
 }
