@@ -9,16 +9,11 @@ export const createTypeOrmConn = async () => {
 };
 
 export const openTypeOrmConn = async () => {
-  await getConnection("default").synchronize();
+  const connection = getConnection("default");
+  await connection.synchronize(true);
 };
 
 export const closeTypeOrmConn = async () => {
-  await getConnection("default").synchronize();
-  await getConnection("default").close();
-};
-
-export const clearTypeOrmConn = async () => {
   const connection = getConnection("default");
-  await connection.getRepository(Coin).clear();
   await connection.close();
 };

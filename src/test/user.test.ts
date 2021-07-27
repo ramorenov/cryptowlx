@@ -11,13 +11,7 @@ beforeAll(async () => {
 
 describe("GET /users", () => {
   test("debe responder lista de usuarios con status 200 ", async () => {
-    await request(app)
-      .get("/users")
-      .expect("Content-Type", /json/)
-      .expect(200)
-      .then((res: { body: IUserR }) => {
-        console.log(res.body);
-      });
+    await request(app).get("/users").expect("Content-Type", /json/).expect(200);
   });
 });
 
@@ -50,7 +44,6 @@ describe("POST /users", () => {
         pref_currency: "eur",
       })
       .expect(400);
-    console.log(result.error);
   });
 
   test("debe responder status 400 si la contraseña no es alfanumerica", async () => {
@@ -64,10 +57,10 @@ describe("POST /users", () => {
         pref_currency: "eur",
       })
       .expect(400);
-    console.log(result.error);
   });
 });
 
 afterAll(async () => {
+  await closeTypeOrmConn();
   await server.close();
 });

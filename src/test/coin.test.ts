@@ -1,4 +1,4 @@
-import { clearTypeOrmConn, closeTypeOrmConn, createTypeOrmConn, openTypeOrmConn } from "../config/ormconnection";
+import { closeTypeOrmConn, createTypeOrmConn, openTypeOrmConn } from "../config/ormconnection";
 
 const request = require("supertest");
 const { app, server } = require("../index");
@@ -7,6 +7,13 @@ let token = "";
 beforeAll(async () => {
   await createTypeOrmConn();
   await openTypeOrmConn();
+  await request(app).post("/users").send({
+    name: "ricardo",
+    last_name: "moreno",
+    username: "ramorenov",
+    password: "A123456a",
+    pref_currency: "eur",
+  });
 });
 
 beforeEach(async () => {
@@ -140,6 +147,6 @@ describe("GET /coins/top", () => {
 });
 
 afterAll(async () => {
-  await clearTypeOrmConn();
+  await closeTypeOrmConn();
   await server.close();
 });

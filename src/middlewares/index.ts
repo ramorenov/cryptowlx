@@ -18,6 +18,6 @@ export const verifyToken = async (req: any, res: Response, next: NextFunction) =
     req.user = { id: decoded.payload.id, username: decoded.payload.username };
     next();
   } catch (error) {
-    return res.status(401).json({ failed: true, message: error.message });
+    return res.status(401).json({ message: error.message });
   }
 };

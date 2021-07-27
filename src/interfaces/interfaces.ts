@@ -24,3 +24,9 @@ export interface ITopCoin {
   top_n: number;
   order: string;
 }
+
+export interface IResp {
+  failed: boolean;
+  status: number;
+  message: any | string;
+}

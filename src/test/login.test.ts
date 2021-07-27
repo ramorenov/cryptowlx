@@ -1,10 +1,17 @@
-import { createTypeOrmConn, openTypeOrmConn } from "../config/ormconnection";
+import { closeTypeOrmConn, createTypeOrmConn, openTypeOrmConn } from "../config/ormconnection";
 const request = require("supertest");
 const { app, server } = require("../index");
 
 beforeAll(async () => {
   await createTypeOrmConn();
   await openTypeOrmConn();
+  await request(app).post("/users").send({
+    name: "ricardo",
+    last_name: "moreno",
+    username: "ramorenov",
+    password: "A123456a",
+    pref_currency: "eur",
+  });
 });
 
 describe("POST /login", () => {
@@ -26,8 +33,8 @@ describe("POST /login", () => {
     await request(app)
       .post("/login")
       .send({
-        username: "camilagf",
-        password: "A123456a",
+        username: 1233,
+        password: 2546,
       })
       .expect(401)
       .then((res: { body: any }) => {
@@ -37,5 +44,6 @@ describe("POST /login", () => {
 });
 
 afterAll(async () => {
+  await closeTypeOrmConn();
   await server.close();
 });
