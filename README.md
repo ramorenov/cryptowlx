@@ -20,9 +20,7 @@ Para ejecutar el proyecto necesitaras:
 
 En la terminal del sistema operativo, ubicado en la carpeta principal del proyecto CRYPTOWLX, ejecuta el comando **npm install**, para realizar la instalación de todas las dependencias requeridas.
 
-se debe crear un archivo .env en la raiz del proyecto para colocar la variable de entorno KEY_PRIVATE que servira como llave para encryptar la informacion y generar el token. eje:
-
-# SECRET
+se debe crear un archivo .env en la raíz del proyecto para colocar la variable de entorno KEY_PRIVATE que servira como llave para encryptar la informacion y generar el token. eje:
 
 KEY_PRIVATE=dafhasddfhaASFa56asg5
 
