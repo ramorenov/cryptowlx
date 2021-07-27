@@ -71,12 +71,6 @@ Deberás crear previamente una base de datos en Postgres; para configurarla debe
   ]
 ```
 
-Una vez configuradas ambas bases de datos, debe generar y ejecutar la migración de las entidades para crear las respectivas tablas en las bases de datos dev y test, para esto puede ejecutar los siguientes comandos:
-
-- npm run migration:gen-dev
-- npm run migration:run-dev
-- npm run migration:run-test
-
 Una vez que la instalación a finalizado puedes correr el proyecto con el comando **npm run dev**, por defecto se creara el servidor en el localhost:3000.
 
 ## Ejecutando las pruebas ⚙️
